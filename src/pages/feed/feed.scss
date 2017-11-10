@@ -1,3 +1,15 @@
 page-feed {
+    // Ficar atento:
+    // Se a alteração no css for somente dentro da classe podemos coloca-la abaixo senão,
+    // temos que colocar denfro de app.scss assim aplicando apra todo o projeto.
+.titulo {
+    color:red;
+    font-family: Calibri;
+    text-align: center;
+}
+
+p{
+    font-family: Calibri;
+}
 
 }
