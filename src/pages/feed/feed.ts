@@ -15,11 +15,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class FeedPage {
 
+  // Criando Variavel
+  public nomeUsuario:string = "Leonardo Carvalho Mendes";
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  // Criando função
+  public somaDoisNumero(num1:number, num2:number): number{
+      return num1+num2;
+  }
+
   ionViewDidLoad() {
-    console.log('ionViewDidLoad FeedPage');
+    /*Nessa area mostra as funções depois da tela crregada*/
+    //console.log('ionViewDidLoad FeedPage');
   }
 
 }
