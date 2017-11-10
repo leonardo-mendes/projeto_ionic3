@@ -32,6 +32,9 @@ export class FeedPage {
     time_comment: "11h ago"
   }
 
+  // Foi criado uma lista genérica para receber o JSON
+  public lista_filmes = new Array<any>();
+
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
@@ -54,6 +57,7 @@ export class FeedPage {
       data => {
         const response = (data as any); // Transformamos a resposta em um objeto sem tipagem, pois ai conseguimos pegar o seu valor de qualquer maneira
         const objretorno = JSON.parse(response._body); // transformamos em JSON
+        this.lista_filmes = objretorno.results; // nossa lista vai receber o conteudo
         console.log(objretorno);
       }, error => {
         console.log(error);
