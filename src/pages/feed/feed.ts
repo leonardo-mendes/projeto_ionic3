@@ -18,6 +18,16 @@ export class FeedPage {
   // Criando Variavel
   public nomeUsuario:string = "Leonardo Carvalho Mendes";
 
+  // Criando Objeto JSON
+  public objetoFeed = {
+    titulo:"Leonardo Mendes",
+    data:"Novembro, 5 de 2017",
+    descricao:"Texto simples para teste de JSON",
+    qntd_likes:3,
+    qntd_comments:15,
+    time_comment: "11h ago"
+  }
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
