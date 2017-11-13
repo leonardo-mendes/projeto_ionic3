@@ -19,4 +19,6 @@
 
 <ion-content padding>
   <p>Perfil</p>
+  <img *ngIf="img" [src]="img" alt="">
+  <button ion-button block (click)="photo()">Photo</button>
 </ion-content>
