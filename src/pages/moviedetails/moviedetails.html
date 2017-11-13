@@ -1,0 +1,45 @@
+<!--
+  Generated template for the MoviedetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar *ngIf="filme">
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Detalhes: {{filme.original_title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <!--
+  o *ngIf é um diretiva, ela mexe com a estrutura da pagina, todas as diretivas tem o * no começo
+  Nesse exemplo ele so vai exibir se existir alguma coisa na variavel filme
+  -->
+  <ion-card *ngIf="filme">
+    <!-- Esse comando acima estou dizendo que a variavel filme vai ser o vetor lista_filmes  -->
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="assets/imgs/marty-avatar.png">
+      </ion-avatar>
+      <h2>{{filme.original_title}}</h2>
+      <p>{{filme.release_date}}</p>
+    </ion-item>
+
+    <!-- Como utilizamos o [] o src virou uma expressão, por isso tivemos que utilizar o '' + com a variavel senão ele interpretatia o link todo como código -->
+    <img [src]="'https://image.tmdb.org/t/p/w300/' + filme.backdrop_path">
+
+    <ion-card-content>
+      <p>{{filme.overview}}</p>
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

@@ -15,11 +15,16 @@
 
 <ion-content padding>
 
+  <!--Esse componente abaixo é para somente carregar o refresher-->
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
   <!--
   o *ngFor é um diretiva, ela mexe com a estrutura da pagina, todas as diretivas tem o * no começo
   Nesse exemplos iremos utilizar o Loop
   -->
-   <ion-card *ngFor="let filme of lista_filmes">
+  <ion-card *ngFor="let filme of lista_filmes">
     <!-- Esse comando acima estou dizendo que a variavel filme vai ser o vetor lista_filmes  -->
 
     <ion-item>
@@ -29,7 +34,7 @@
       <h2>{{filme.original_title}}</h2>
       <p>{{filme.release_date}}</p>
     </ion-item>
-    
+
     <!-- Como utilizamos o [] o src virou uma expressão, por isso tivemos que utilizar o '' + com a variavel senão ele interpretatia o link todo como código -->
     <img [src]="'https://image.tmdb.org/t/p/w300/' + filme.backdrop_path">
 
@@ -52,11 +57,16 @@
       </ion-col>
       <ion-col center text-center>
         <ion-note>
-            {{objetoFeed.time_comment}}
+          {{objetoFeed.time_comment}}
         </ion-note>
       </ion-col>
     </ion-row>
 
+    <button ion-button block (click)="openDetail(filme)">Detalhes</button>
   </ion-card>
+  
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 
 </ion-content>

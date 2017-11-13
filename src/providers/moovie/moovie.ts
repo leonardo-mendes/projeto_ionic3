@@ -22,9 +22,13 @@ export class MoovieProvider {
     return "9ae8e12efcccf98ab619dcd1a1d6f538";
   }
 
-  getLatestMovies(){
+  getLatestMovies(page = 1){ // Como o page ja esta declarado se alguem não passar ele ja vai setar 1 como padrão
     // http é um objeto ja instanciado automaticamente
-     return this.http.get(this.baseApiPath + "/movie/popular?api_key=" + this.apiKey());
+     return this.http.get(this.baseApiPath + "/movie/popular?page="+page+"&api_key=" + this.apiKey());
   }
 
+  getMoviesDetails(idmovie){
+    // http é um objeto ja instanciado automaticamente
+     return this.http.get(this.baseApiPath + "/movie/"+ idmovie +"?api_key=" + this.apiKey());
+  }
 }
